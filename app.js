@@ -108,7 +108,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   document.addEventListener('keyup', control)
-  document.addEventListener('touchend',rotate)
+  document.addEventListener('touchend',flip)
+
+  function flip(e){
+    rotate()
+  }
 
   //move down function
   function moveDown() {
