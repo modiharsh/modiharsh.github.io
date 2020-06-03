@@ -113,7 +113,45 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   document.addEventListener('keyup', control)
-  document.addEventListener('touchend',flip)
+  
+
+  document.addEventListener("touchstart", touchStartHandler, false);
+  document.addEventListener("touchend", touchEndHandler, false);
+
+
+var touchesInAction = {};
+
+function touchStartHandler(event) {
+    var touches = event.changedTouches;
+
+    for(var j = 0; j < touches.length; j++) {
+
+         /* store touch info on touchstart */
+         touchesInAction[ "$" + touches[j].identifier ] = {
+
+            identifier : touches[j].identifier,
+            pageX : touches[j].pageX,
+            pageY : touches[j].pageY
+         };
+    }
+}
+
+function touchEndHandler(event) {
+    var touches = event.changedTouches;
+
+    for(var j = 0; j < touches.length; j++) {
+
+        /* access stored touch info on touchend */
+        var theTouchInfo = touchesInAction[ "$" + touches[j].identifier ];
+        theTouchInfo.dx = touches[j].pageX - theTouchInfo.pageX;  /* x-distance moved since touchstart */
+        theTouchInfo.dy = touches[j].pageY - theTouchInfo.pageY;  /* y-distance moved since touchstart */
+
+        alert(theTouchInfo.dx + " & " + theTouchInfo.dy);
+    }
+
+    /* determine what gesture was performed, based on dx and dy (tap, swipe, one or two fingers etc. */
+
+}
 
   
 
