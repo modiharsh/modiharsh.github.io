@@ -146,7 +146,12 @@ function touchEndHandler(event) {
         theTouchInfo.dx = touches[j].pageX - theTouchInfo.pageX;  /* x-distance moved since touchstart */
         theTouchInfo.dy = touches[j].pageY - theTouchInfo.pageY;  /* y-distance moved since touchstart */
 
-        alert(theTouchInfo.dx + " & " + theTouchInfo.dy);
+        if ( theTouchInfo.dx == 0){
+          rotate()}
+        else if ( theTouchInfo.dx > 0){
+          moveRight()}
+        else{
+          moveLeft()}
     }
 
     /* determine what gesture was performed, based on dx and dy (tap, swipe, one or two fingers etc. */
