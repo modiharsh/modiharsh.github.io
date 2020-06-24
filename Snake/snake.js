@@ -153,13 +153,13 @@ function touchEndHandler(event) {
         theTouchInfo.dx = touches[j].pageX - theTouchInfo.pageX;  /* x-distance moved since touchstart */
         theTouchInfo.dy = touches[j].pageY - theTouchInfo.pageY;  /* y-distance moved since touchstart */
 
-        alert(theTouchInfo.dx + " ----" + theTouchInfo.dy);
         
-        if ( theTouchInfo.dx >= theTouchInfo.dy)
+        
+        if ( Math.abs(theTouchInfo.dx) >= Math.abs(theTouchInfo.dy))
         {
             if ( theTouchInfo.dx > 0){
                 if (!leftDirection){
-                    alert("Swiped right");
+                    
                     xv=1;yv=0;
                     rightDirection=true;
                     upDirection=false;
@@ -168,8 +168,8 @@ function touchEndHandler(event) {
             }
             else{
                 if (!rightDirection){
-                    alert("Swiped left");
-                    xv=1;yv=0;
+                    
+                    xv=-1;yv=0;
                     leftDirection=true;
                     upDirection=false;
                     downDirection=false;
@@ -181,8 +181,8 @@ function touchEndHandler(event) {
         {
             if ( theTouchInfo.dy > 0){
                 if (!downDirection){
-                    alert("Swiped up");
-                    xv=1;yv=0;
+                    
+                    xv=0;yv=-1;
                     upDirection=true;
                     leftDirection=false;
                     rightDirection=false;
@@ -190,7 +190,7 @@ function touchEndHandler(event) {
             }
             else{
                 if (!upDirection){
-                    alert("Swiped down");
+                    
                     xv=0;yv=1;
                     downDirection=true;
                     leftDirection=false;
