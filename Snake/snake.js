@@ -128,7 +128,7 @@ var touchesInAction = {};
 
 function touchStartHandler(event) {
     var touches = event.changedTouches;
-    alert("Inside touch start");
+    
 
     for(var j = 0; j < touches.length; j++) {
 
