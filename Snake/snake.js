@@ -21,7 +21,7 @@ function init(){
     document.addEventListener("keydown",keyPush);
     document.addEventListener("touchstart", touchStartHandler, false);
     document.addEventListener("touchend", touchEndHandler, false);
-    setInterval(game, speed);
+    setTimeout(game, speed);
 
 }
 
@@ -145,7 +145,6 @@ function touchStartHandler(event) {
 function touchEndHandler(event) {
     var touches = event.changedTouches;
 
-    alert("Inside touch end");
     for(var j = 0; j < touches.length; j++) {
 
         /* access stored touch info on touchend */
@@ -179,7 +178,7 @@ function touchEndHandler(event) {
         }
         else
         {
-            if ( theTouchInfo.dy > 0){
+            if ( theTouchInfo.dy < 0){
                 if (!downDirection){
                     
                     xv=0;yv=-1;
