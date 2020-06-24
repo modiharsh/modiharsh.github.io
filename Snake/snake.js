@@ -21,8 +21,8 @@ function init(){
     document.addEventListener("keydown",keyPush);
     document.addEventListener("touchstart", touchStartHandler, false);
     document.addEventListener("touchend", touchEndHandler, false);
-    setTimeout(game, speed);
-
+    //setInterval(game, speed);
+    game();
 }
 
 
@@ -49,6 +49,7 @@ function game(){
         ctx.fillRect(trail[i].x *gs , trail[i].y * gs, gs-2,gs-2);
         if(trail[i].x ==px && trail[i].y==py){
             tail =3 ;
+            speed = 120;
         }
     }
     trail.push({x:px,y:py});
@@ -58,6 +59,7 @@ function game(){
     if(ax ==px && ay==py){
         tail++;
         speed-=2;
+        
         ax = Math.floor(Math.random()*tc);
         ay = Math.floor(Math.random()*tc);
 
@@ -70,6 +72,11 @@ function game(){
     }
     ctx.fillStyle = "red";
     ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2);
+    if(speed==0){
+        alert("speed got zero");
+        speed = 120;
+    }
+    setTimeout(game, speed);
 
 }
 
@@ -121,7 +128,7 @@ function keyPush(evt){
 
     
     }
-
+    
 }
 
 var touchesInAction = {};
