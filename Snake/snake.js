@@ -128,6 +128,7 @@ var touchesInAction = {};
 
 function touchStartHandler(event) {
     var touches = event.changedTouches;
+    alert("Inside touch start");
 
     for(var j = 0; j < touches.length; j++) {
 
@@ -144,6 +145,7 @@ function touchStartHandler(event) {
 function touchEndHandler(event) {
     var touches = event.changedTouches;
 
+    alert("Inside touch end");
     for(var j = 0; j < touches.length; j++) {
 
         /* access stored touch info on touchend */
