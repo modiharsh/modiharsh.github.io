@@ -159,12 +159,16 @@ function touchEndHandler(event) {
                 if (!leftDirection){
                     xv=1;yv=0;
                     rightDirection=true;
+                    upDirection=false;
+                    downDirection=false;
                 }
             }
             else{
                 if (!rightDirection){
                     xv=1;yv=0;
                     leftDirection=true;
+                    upDirection=false;
+                    downDirection=false;
                 }
             }
 
@@ -175,12 +179,16 @@ function touchEndHandler(event) {
                 if (!downDirection){
                     xv=1;yv=0;
                     upDirection=true;
+                    leftDirection=false;
+                    rightDirection=false;
                 }
             }
             else{
                 if (!upDirection){
                     xv=0;yv=1;
                     downDirection=true;
+                    leftDirection=false;
+                    rightDirection=false;
                 }
             }
         }
