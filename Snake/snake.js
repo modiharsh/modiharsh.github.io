@@ -175,6 +175,43 @@ function isSnake(ax,ay){
     return false;
 }
 
+function moveLeft(){
+    if (!rightDirection){
+        xv=-1;yv=0;
+        leftDirection=true;
+        upDirection=false;
+        downDirection=false;
+        
+    }
+}
+
+function moveRight(){
+    if (!leftDirection){
+        xv=1;yv=0;
+        rightDirection=true;
+        upDirection=false;
+        downDirection=false;
+    }
+}
+
+function moveUp(){
+    if (!downDirection){
+        xv=0;yv=-1;
+        upDirection=true;
+        leftDirection=false;
+        rightDirection=false;
+    }
+}
+
+function moveDown(){
+    if (!upDirection){
+        xv=0;yv=1;
+        downDirection=true;
+        leftDirection=false;
+        rightDirection=false;
+    }
+}
+
 
 function keyPush(evt){ 
     switch(evt.keyCode){

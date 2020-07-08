@@ -17,10 +17,15 @@
     
     <br>
     <div id="mobileButtons" style="text-align:center;width:400px;">
-        <button onclick="moveup()">UP</button><br><br>
-        <button onclick="moveleft()">LEFT</button>
-        <button onclick="moveright()">RIGHT</button><br><br>
-        <button onclick="movedown()">DOWN</button>
+        <table width="400" height="100" >
+            <tr >
+            <th rowspan="2" width="100"><button onclick="moveLeft()" style="width: 100%;height: 100%;">LEFT</button></th>
+            <th><button onclick="moveUp()" style="width: 100%;height: 100%;">UP</button></th>            
+            
+            <th rowspan="2" width="100"><button onclick="moveRight()" style="width: 100%;height: 100%;">RIGHT</button></th>
+            </tr>
+            <tr><th><button onclick="moveDown()" style="width: 100%;height: 100%;">DOWN</button></th></tr>
+        </table>
     </div>
 
 </body>
