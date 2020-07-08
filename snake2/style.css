@@ -1,3 +1,15 @@
 body {
   overscroll-behavior: contain;
 }
+
+#mobileButtons th{
+ padding: 5px; 
+}
+
+#mobileButtons button{
+  font-size: xx-large;
+  width: 100%;
+  height: 100%;
+  
+}
+
