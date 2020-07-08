@@ -51,7 +51,7 @@ function displayButtons(){
         }
     };    
 
-    if( isMobile.any() ){ alert('Mobile');}
+    if( isMobile.any() ){ continue;}
     else{
         mobileButtonDiv = document.getElementById("mobileButtons");
         document.getElementById("mobileButtons").style.display = "none";
